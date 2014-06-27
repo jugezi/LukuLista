@@ -49,7 +49,9 @@
       </p>
     </div>
     <span>
-      
+      <% book.genres.each do |genre|  %>
+      <%= link_to genre.name, '#', class: 'label label-primary' %>
+      <% end %>
     </span>
   </div>
 </li>
@@ -59,6 +61,11 @@
     <div class="col-sm-4">
       <h2>Genret</h2>
       <ul class="list-unstyled">
+      <% @genres.each do |genre| %>
+        <li>
+          <%= link_to genre.name, books_path(filter: genre.name), class: 'label label-primary' %>
+        </li>
+      <% end %>
       </ul>
     </div>
   </div>
